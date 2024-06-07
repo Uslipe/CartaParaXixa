@@ -6,19 +6,38 @@ body{
 
 }
 
-.envelope{
+.container{
     position: relative;
-    width: 400px;
-    height: 300px;
-    background-color: #f00000;
 }
 
+.envelope{
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background-color: #2E8B57;
+}
+
+/* A propriedade ::before faz com que conteúdo seja exibido antes do selecionado */
 .envelope::before{
-    background-color: blue;
-    width: 35vw;
-    height: 10vh;
-    left: 5vw;
+    background-color: #2E8B57;
     content: "";
+    /* tamanho */
+    width: 212px;
+    height: 212px;
+    /* posição */
+    left: 44px;
+    top: -106px;
     position: absolute;
     transform: rotate(45deg);
+    /* detalhes */
+    border-radius: 30px 0 0 0;
+}
+
+.cartao{
+    background-color:#FFF8DC;
+    width: 270px;
+    height: 170px;
+    position: absolute;
+    top: 10px;
+    left: 15px;
 }
