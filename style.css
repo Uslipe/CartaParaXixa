@@ -1,9 +1,14 @@
+@font-face {
+    font-family: 'halaney';
+    src: url(assets/Halaney-Demo.otf);
+}
+
 body{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-
+    font-family: 'halaney';
 }
 
 .container{
@@ -40,13 +45,11 @@ body{
     position: absolute;
     top: 10px;
     left: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-@font-face {
-    font-family: 'halaney';
-    src: url(assets/Halaney-Demo.otf);
-}
-
-p{
-    font-family: 'halaney';
+.texto{
+    text-align: center;
 }
