@@ -41,3 +41,12 @@ body{
     top: 10px;
     left: 15px;
 }
+
+@font-face {
+    font-family: 'halaney';
+    src: url(assets/Halaney-Demo.otf);
+}
+
+p{
+    font-family: 'halaney';
+}
