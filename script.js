@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-    var envelope = document.getElementById('envelope');
+    var envelope = document.getElementById('container');
 
     envelope.addEventListener('click', function(event) {
         if (!event.target.closest('.cartao')) { // Verifica se o clique não foi no cartão

@@ -9,6 +9,7 @@ body{
     align-items: center;
     height: 100vh;
     font-family: 'halaney';
+    background-color: #bbe2cb;
 }
 
 .container{
@@ -33,6 +34,8 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: transform 0.5s ease; /* Adicionando transição para a animação */
+    transform-origin: top center;
 }
 
 .texto{
@@ -59,7 +62,7 @@ body{
 }
 
 /* A PARTE QUE ABRE DO ENVELOPE */
-.envelope.open::before{
+.envelope::before{
     background-color: #2E8B57;
     content: "";
     /* tamanho */
@@ -75,11 +78,6 @@ body{
 }
 
 .cartao.open {
-    transition: transform 0.5s ease; /* Adicionando transição para a animação */
-    transform-origin: bottom center; /* Define o ponto de origem da transformação */
+    
     transform: translateY(-200px); /* Move o cartão para fora do envelope */
-}
-
-.envelope.open {
-    top: -200px; /* Move o envelope para cima */
 }
