@@ -13,6 +13,7 @@ body{
 
 .container{
     position: relative;
+    cursor: pointer;
 }
 
 .envelope{
@@ -20,23 +21,6 @@ body{
     width: 300px;
     height: 200px;
     background-color: #2E8B57;
-}
-
-/* A PARTE QUE ABRE DO ENVELOPE */
-/* A propriedade ::before faz com que conteúdo seja exibido antes do selecionado */
-.envelope::before{
-    background-color: #2E8B57;
-    content: "";
-    /* tamanho */
-    width: 212px;
-    height: 212px;
-    /* posição */
-    left: 44px;
-    top: -106px;
-    position: absolute;
-    transform: rotate(45deg);
-    /* detalhes */
-    border-radius: 10px 0 0 0;
 }
 
 .cartao{
@@ -72,4 +56,30 @@ body{
     border-top: 200px solid transparent;
     left: -150px;
     top: -105px;
+}
+
+/* A PARTE QUE ABRE DO ENVELOPE */
+.envelope.open::before{
+    background-color: #2E8B57;
+    content: "";
+    /* tamanho */
+    width: 212px;
+    height: 212px;
+    /* posição */
+    left: 44px;
+    top: -106px;
+    position: absolute;
+    transform: rotate(45deg);
+    /* detalhes */
+    border-radius: 10px 0 0 0;
+}
+
+.cartao.open {
+    transition: transform 0.5s ease; /* Adicionando transição para a animação */
+    transform-origin: bottom center; /* Define o ponto de origem da transformação */
+    transform: translateY(-200px); /* Move o cartão para fora do envelope */
+}
+
+.envelope.open {
+    top: -200px; /* Move o envelope para cima */
 }
