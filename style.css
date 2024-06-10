@@ -53,3 +53,22 @@ body{
 .texto{
     text-align: center;
 }
+
+.frente{
+    position: absolute;
+    border-right: 150px solid #2e4b3a;
+    border-top: 105px solid transparent;
+    border-bottom: 95px solid transparent;
+    z-index: 10;
+    left: 150px;
+    top: 1px;
+}
+
+.frente::before{
+    position: absolute;
+    content: "";
+    border-left: 300px solid #2e4b3a;
+    border-top: 200px solid transparent;
+    left: -150px;
+    top: -105px;
+}
