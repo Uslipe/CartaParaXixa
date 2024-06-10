@@ -22,6 +22,7 @@ body{
     background-color: #2E8B57;
 }
 
+/* A PARTE QUE ABRE DO ENVELOPE */
 /* A propriedade ::before faz com que conteúdo seja exibido antes do selecionado */
 .envelope::before{
     background-color: #2E8B57;
@@ -35,7 +36,7 @@ body{
     position: absolute;
     transform: rotate(45deg);
     /* detalhes */
-    border-radius: 30px 0 0 0;
+    border-radius: 10px 0 0 0;
 }
 
 .cartao{
