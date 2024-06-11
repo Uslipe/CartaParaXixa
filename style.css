@@ -17,14 +17,17 @@ body{
     cursor: pointer;
 }
 
-.envelope{
+.envelope {
     position: relative;
     width: 300px;
     height: 200px;
     background-color: #2E8B57;
+    top: 0;
+    transition: top 0.5s ease;
+    z-index: 2; /* Ajuste o z-index para garantir que o envelope esteja acima do ::before */
 }
 
-.cartao{
+.cartao {
     background-color:#FFF8DC;
     width: 270px;
     height: 170px;
@@ -34,8 +37,9 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: transform 0.5s ease; /* Adicionando transição para a animação */
+    transition: transform 0.5s ease;
     transform-origin: top center;
+    z-index: 2; /* Ajuste o z-index para garantir que o cartão esteja acima do ::before */
 }
 
 .texto{
@@ -61,23 +65,43 @@ body{
     top: -105px;
 }
 
-/* A PARTE QUE ABRE DO ENVELOPE */
-.envelope::before{
-    background-color: #2E8B57;
+
+.container::before {
     content: "";
-    /* tamanho */
-    width: 212px;
-    height: 212px;
-    /* posição */
-    left: 44px;
-    top: -106px;
     position: absolute;
-    transform: rotate(45deg);
-    /* detalhes */
-    border-radius: 10px 0 0 0;
+    z-index: 3;
+    border-top: 200px solid #2E8B57;
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    transition: top 0.5s ease; /* Adicionando transição para suavizar o movimento */
+    top: 0; /* Ajuste a posição para alinhar com o envelope */
 }
 
-.cartao.open {
-    
+
+.container.open::before {
+    display: none;
+}
+
+
+/* A PARTE QUE ABRE DO ENVELOPE */
+.envelope::before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    border-top: 200px solid #2E8B57;
+    border-right: 150px solid transparent;
+    border-left: 150px solid transparent;
+    transition: transform 0.5s ease; /* Removi a transição do border-top */
+    transform-origin: center top;
+    transform: scaleY(0) rotateX(-180deg); /* Inicialmente fechado */
+}
+
+
+.container.open .envelope::before {
+    transform: scaleY(1) rotateX(-180deg); /* Abre o envelope (rotaciona para cima) */
+}
+
+
+.cartao.open {   
     transform: translateY(-200px); /* Move o cartão para fora do envelope */
 }
